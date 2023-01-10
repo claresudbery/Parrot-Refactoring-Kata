@@ -1,2 +1,4 @@
 .vs
 .idea/
+*.ncrunchsolution
+CSharp/parrot.v3.ncrunchsolution.user

@@ -3,3 +3,4 @@
 CSharp/parrot.sln.DotSettings.user
 CSharp/parrot.v3.ncrunchsolution.user
 CSharp/parrot.v3.ncrunchsolution
+*.cache

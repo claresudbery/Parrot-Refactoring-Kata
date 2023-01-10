@@ -5,11 +5,11 @@ namespace Parrot
     public class Parrot
     {
         private readonly bool _isNailed;
-        private readonly int _numberOfCoconuts;
+        protected readonly int _numberOfCoconuts;
         private readonly ParrotTypeEnum _type;
         private readonly double _voltage;
 
-        public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
             _type = type;
             _numberOfCoconuts = numberOfCoconuts;
@@ -17,7 +17,23 @@ namespace Parrot
             _isNailed = isNailed;
         }
 
-        public double GetSpeed()
+        public static Parrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        {
+
+            switch (type)
+            {
+                case ParrotTypeEnum.EUROPEAN:
+                    return new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+                case ParrotTypeEnum.AFRICAN:
+                    return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+                case ParrotTypeEnum.NORWEGIAN_BLUE:
+                    return new NorwegianParrot(numberOfCoconuts, voltage, isNailed);
+                default:
+                    return new Parrot(type, numberOfCoconuts, voltage, isNailed);
+            }
+        }
+
+        public virtual double GetSpeed()
         {
             switch (_type)
             {
@@ -37,12 +53,12 @@ namespace Parrot
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }
 
-        private double GetLoadFactor()
+        protected double GetLoadFactor()
         {
             return 9.0;
         }
 
-        private double GetBaseSpeed()
+        protected double GetBaseSpeed()
         {
             return 12.0;
         }

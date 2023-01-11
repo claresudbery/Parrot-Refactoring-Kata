@@ -2,8 +2,8 @@
 {
     public enum ParrotTypeEnum
     {
-        EUROPEAN,
-        AFRICAN,
-        NORWEGIAN_BLUE
+        European,
+        African,
+        NorwegianBlue
     }
 }

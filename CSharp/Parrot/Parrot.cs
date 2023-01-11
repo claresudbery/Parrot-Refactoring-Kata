@@ -4,10 +4,10 @@ namespace Parrot
 {
     public class Parrot
     {
-        private readonly bool _isNailed;
+        protected readonly bool _isNailed;
         protected readonly int _numberOfCoconuts;
         private readonly ParrotTypeEnum _type;
-        private readonly double _voltage;
+        protected readonly double _voltage;
 
         protected Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
@@ -48,7 +48,7 @@ namespace Parrot
             throw new Exception("Should be unreachable");
         }
 
-        private double GetBaseSpeed(double voltage)
+        protected double GetBaseSpeed(double voltage)
         {
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }

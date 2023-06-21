@@ -19,5 +19,10 @@ namespace Parrot
         {
             return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
         }
+
+        private double GetLoadFactor()
+        {
+            return 9.0;
+        }
     }
 }

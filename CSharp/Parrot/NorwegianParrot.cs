@@ -21,5 +21,10 @@ namespace Parrot
         {
             return _isNailed ? 0 : GetBaseSpeed(_voltage);
         }
+
+        private double GetBaseSpeed(double voltage)
+        {
+            return Math.Min(24.0, voltage * GetBaseSpeed());
+        }
     }
 }

@@ -18,6 +18,11 @@ namespace Parrot
             return _isNailed ? 0 : GetBaseSpeed(_voltage);
         }
 
+        public override string GetCry()
+        {
+            return _voltage > 0 ? "Bzzzzzz" : "...";
+        }
+
         private double GetBaseSpeed(double voltage)
         {
             return Math.Min(24.0, voltage * GetBaseSpeed());

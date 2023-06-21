@@ -22,7 +22,7 @@ namespace Parrot
         {
             switch (type)
             {
-                case ParrotTypeEnum.EUROPEAN: return new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+                case ParrotTypeEnum.EUROPEAN: return new EuropeanParrot();
             }
 
             return new Parrot(type, numberOfCoconuts, voltage, isNailed);

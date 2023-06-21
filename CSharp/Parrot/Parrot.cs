@@ -43,9 +43,6 @@ namespace Parrot
             
             switch (_type)
             {
-                case ParrotTypeEnum.AFRICAN:
-                    value = "Sqaark!";
-                    break;
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
                     value = _voltage > 0 ? "Bzzzzzz" : "...";
                     break;

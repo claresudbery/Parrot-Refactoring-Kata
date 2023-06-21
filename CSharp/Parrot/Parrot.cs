@@ -43,9 +43,6 @@ namespace Parrot
             
             switch (_type)
             {
-                case ParrotTypeEnum.EUROPEAN:
-                    value = "Sqoork!";
-                    break;
                 case ParrotTypeEnum.AFRICAN:
                     value = "Sqaark!";
                     break;

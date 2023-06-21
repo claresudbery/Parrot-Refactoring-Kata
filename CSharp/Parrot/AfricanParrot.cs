@@ -11,7 +11,7 @@ namespace Parrot
         private readonly int _numberOfCoconuts;
 
         public AfricanParrot(int numberOfCoconuts) 
-            : base(numberOfCoconuts)
+            : base()
         {
             _numberOfCoconuts = numberOfCoconuts;
         }

@@ -8,8 +8,8 @@ namespace Parrot
 {
     public class EuropeanParrot : Parrot
     {
-        public EuropeanParrot(int numberOfCoconuts) 
-            : base(numberOfCoconuts)
+        public EuropeanParrot() 
+            : base()
         {
         }
 

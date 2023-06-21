@@ -4,24 +4,16 @@ namespace Parrot
 {
     public abstract class Parrot
     {
-        protected readonly int NumberOfCoconuts;
-
-        protected Parrot(int numberOfCoconuts)
-        {
-            NumberOfCoconuts = numberOfCoconuts;
-        }
-
         public static Parrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
-
             switch (type)
             {
                 case ParrotTypeEnum.European:
-                    return new EuropeanParrot(numberOfCoconuts);
+                    return new EuropeanParrot();
                 case ParrotTypeEnum.African:
                     return new AfricanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.NorwegianBlue:
-                    return new NorwegianParrot(numberOfCoconuts, voltage, isNailed);
+                    return new NorwegianParrot(voltage, isNailed);
                 default:
                     throw new ArgumentException($"Invalid type: {type}");
             }

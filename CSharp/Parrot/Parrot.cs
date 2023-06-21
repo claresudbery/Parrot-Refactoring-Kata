@@ -36,9 +36,6 @@ namespace Parrot
             return 12.0;
         }
 
-        public virtual string GetCry()
-        {
-            return "";
-        }
+        public abstract string GetCry();
     }
 }

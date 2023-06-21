@@ -17,7 +17,7 @@ namespace Parrot
             switch (type)
             {
                 case ParrotTypeEnum.European:
-                    return new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
+                    return new EuropeanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.African:
                     return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
                 case ParrotTypeEnum.NorwegianBlue:

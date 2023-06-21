@@ -8,7 +8,7 @@ namespace Parrot
 {
     public class EuropeanParrot : Parrot
     {
-        public EuropeanParrot(int numberOfCoconuts, double voltage, bool isNailed) 
+        public EuropeanParrot(int numberOfCoconuts) 
             : base(numberOfCoconuts)
         {
         }

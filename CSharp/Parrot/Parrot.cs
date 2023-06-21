@@ -37,7 +37,7 @@ namespace Parrot
             return 12.0;
         }
 
-        public string GetCry()
+        public virtual string GetCry()
         {
             string value;
             

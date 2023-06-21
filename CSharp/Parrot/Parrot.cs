@@ -10,7 +10,7 @@ namespace Parrot
         private readonly ParrotTypeEnum _type;
         private readonly double _voltage;
 
-        private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
             _type = type;
             _numberOfCoconuts = numberOfCoconuts;
@@ -19,7 +19,12 @@ namespace Parrot
         }
 
         public static IParrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
-        { 
+        {
+            switch (type)
+            {
+                case ParrotTypeEnum.EUROPEAN: return new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+            }
+
             return new Parrot(type, numberOfCoconuts, voltage, isNailed);
         }
 
@@ -71,6 +76,26 @@ namespace Parrot
                     throw new ArgumentOutOfRangeException();
             }
             return value;
+        }
+    }
+    
+    public class EuropeanParrot : IParrot
+    {
+        private readonly Parrot _parrot;
+
+        public EuropeanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        {
+            _parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+        }
+
+        public double GetSpeed()
+        {
+            return _parrot.GetSpeed();
+        }
+
+        public string GetCry()
+        {
+            return _parrot.GetCry();
         }
     }
 }

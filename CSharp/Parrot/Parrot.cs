@@ -32,8 +32,6 @@ namespace Parrot
         {
             switch (_type)
             {
-                case ParrotTypeEnum.EUROPEAN:
-                    return GetBaseSpeed();
                 case ParrotTypeEnum.AFRICAN:
                     return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
                 case ParrotTypeEnum.NORWEGIAN_BLUE:

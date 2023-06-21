@@ -11,7 +11,8 @@ namespace Parrot
         private readonly double _voltage;
         private readonly bool _isNailed;
 
-        public NorwegianParrot(int numberOfCoconuts, double voltage, bool isNailed) : base(numberOfCoconuts)
+        public NorwegianParrot(int numberOfCoconuts, double voltage, bool isNailed) 
+            : base(numberOfCoconuts)
         {
             _voltage = voltage;
             _isNailed = isNailed;

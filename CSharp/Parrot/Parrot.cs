@@ -19,7 +19,7 @@ namespace Parrot
                 case ParrotTypeEnum.European:
                     return new EuropeanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.African:
-                    return new AfricanParrot(numberOfCoconuts, voltage, isNailed);
+                    return new AfricanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.NorwegianBlue:
                     return new NorwegianParrot(numberOfCoconuts, voltage, isNailed);
                 default:

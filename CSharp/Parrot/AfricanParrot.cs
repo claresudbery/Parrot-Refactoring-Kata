@@ -10,7 +10,8 @@ namespace Parrot
     {
         private readonly int _numberOfCoconuts;
 
-        public AfricanParrot(int numberOfCoconuts, double voltage, bool isNailed) : base(numberOfCoconuts)
+        public AfricanParrot(int numberOfCoconuts) 
+            : base(numberOfCoconuts)
         {
             _numberOfCoconuts = numberOfCoconuts;
         }

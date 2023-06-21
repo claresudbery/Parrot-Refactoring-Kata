@@ -8,8 +8,7 @@ namespace Parrot
 {
     public class EuropeanParrot : Parrot
     {
-        public EuropeanParrot() 
-            : base()
+        public EuropeanParrot()
         {
         }
 

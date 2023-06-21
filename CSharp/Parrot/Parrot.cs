@@ -61,9 +61,6 @@ namespace Parrot
             string value;
             switch (_type)
             {
-                case ParrotTypeEnum.EUROPEAN:
-                    value = "Sqoork!";
-                    break;
                 case ParrotTypeEnum.AFRICAN:
                     value = "Sqaark!";
                     break;

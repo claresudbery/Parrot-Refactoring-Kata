@@ -5,15 +5,25 @@ namespace Parrot
 {
     public abstract class Parrot
     {
-        public static Parrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        private static ParrotTypeEnum _type;
+        private static double _voltage;
+
+        public static Parrot CreateInstance(
+            ParrotTypeEnum type, 
+            int numberOfCoconuts, 
+            double voltage, 
+            bool isNailed)
         {
+            _voltage = voltage;
+            _type = type;
+            
             switch (type)
             {
-                case ParrotTypeEnum.European:
+                case ParrotTypeEnum.EUROPEAN:
                     return new EuropeanParrot();
-                case ParrotTypeEnum.African:
+                case ParrotTypeEnum.AFRICAN:
                     return new AfricanParrot(numberOfCoconuts);
-                case ParrotTypeEnum.NorwegianBlue:
+                case ParrotTypeEnum.NORWEGIAN_BLUE:
                     return new NorwegianParrot(voltage, isNailed);
                 default:
                     throw new ArgumentException($"Invalid type: {type}");
@@ -30,6 +40,7 @@ namespace Parrot
         public string GetCry()
         {
             string value;
+            
             switch (_type)
             {
                 case ParrotTypeEnum.EUROPEAN:

@@ -6,7 +6,6 @@ namespace Parrot
     {
         public static Parrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
-
             switch (type)
             {
                 case ParrotTypeEnum.European:

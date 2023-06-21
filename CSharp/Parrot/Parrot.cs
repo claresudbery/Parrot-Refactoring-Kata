@@ -4,18 +4,12 @@ namespace Parrot
 {
     public abstract class Parrot
     {
-        private static ParrotTypeEnum _type;
-        private static double _voltage;
-
         public static Parrot CreateInstance(
             ParrotTypeEnum type, 
             int numberOfCoconuts, 
             double voltage, 
             bool isNailed)
         {
-            _voltage = voltage;
-            _type = type;
-            
             switch (type)
             {
                 case ParrotTypeEnum.EUROPEAN:

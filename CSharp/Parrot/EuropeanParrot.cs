@@ -12,5 +12,10 @@ namespace Parrot
         {
             return GetBaseSpeed();
         }
+
+        public override string GetCry()
+        {
+            return "Sqoork!";
+        }
     }
 }

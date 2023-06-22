@@ -16,6 +16,6 @@ public class EuropeanParrot : IParrot
 
     public string GetCry()
     {
-        return _parrot.GetCry();
+        return "Sqoork!";
     }
 }

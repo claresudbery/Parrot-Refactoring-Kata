@@ -5,17 +5,11 @@ namespace Parrot
 {
     public class Parrot : IParrot
     {
-        private readonly bool _isNailed;
-        private readonly int _numberOfCoconuts;
         private readonly ParrotTypeEnum _type;
-        private readonly double _voltage;
 
-        public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        private Parrot(ParrotTypeEnum type)
         {
             _type = type;
-            _numberOfCoconuts = numberOfCoconuts;
-            _voltage = voltage;
-            _isNailed = isNailed;
         }
 
         public static IParrot CreateInstance(
@@ -34,7 +28,7 @@ namespace Parrot
                     return new NorwegianBlueParrot(voltage, isNailed);
             }
 
-            return new Parrot(type, numberOfCoconuts, voltage, isNailed);
+            return new Parrot(type);
         }
 
         public double GetSpeed()

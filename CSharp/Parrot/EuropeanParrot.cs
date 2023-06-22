@@ -6,7 +6,7 @@ public class EuropeanParrot : IParrot
 
     public EuropeanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
     {
-        _parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+        _parrot = new Parrot(type);
     }
 
     public double GetSpeed()

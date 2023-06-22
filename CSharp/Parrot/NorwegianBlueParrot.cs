@@ -12,7 +12,7 @@ public class NorwegianBlueParrot : IParrot
     {
         _voltage = voltage;
         _isNailed = isNailed;
-        _parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+        _parrot = new Parrot(type);
     }
 
     public double GetSpeed()

@@ -6,7 +6,7 @@ public class EuropeanParrot : IParrot
 
     public EuropeanParrot(ParrotTypeEnum type)
     {
-        _parrot = new Parrot(type);
+        _parrot = new Parrot();
     }
 
     public double GetSpeed()

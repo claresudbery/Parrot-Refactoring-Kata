@@ -11,7 +11,7 @@ public class AfricanParrot : IParrot
     public AfricanParrot(ParrotTypeEnum type, int numberOfCoconuts)
     {
         _numberOfCoconuts = numberOfCoconuts;
-        _parrot = new Parrot(type);
+        _parrot = new Parrot();
     }
 
     public double GetSpeed()

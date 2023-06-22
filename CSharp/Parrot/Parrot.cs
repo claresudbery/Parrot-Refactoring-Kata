@@ -5,7 +5,7 @@ namespace Parrot
 {
     public class Parrot
     {
-        public Parrot(ParrotTypeEnum type)
+        public Parrot()
         {
         }
 

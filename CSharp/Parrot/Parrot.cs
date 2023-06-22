@@ -26,9 +26,9 @@ namespace Parrot
                     return new AfricanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
                     return new NorwegianBlueParrot(voltage, isNailed);
+                default: 
+                    throw new ArgumentException($"Invalid type: {type}");
             }
-
-            return new Parrot(type);
         }
 
         public double GetSpeed()

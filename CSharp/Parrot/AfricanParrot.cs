@@ -21,7 +21,7 @@ public class AfricanParrot : IParrot
         return "Sqaark!";
     }
 
-    public static double GetLoadFactor()
+    private static double GetLoadFactor()
     {
         return 9.0;
     }

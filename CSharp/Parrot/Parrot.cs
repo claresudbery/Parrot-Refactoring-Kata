@@ -10,7 +10,7 @@ namespace Parrot
         private readonly ParrotTypeEnum _type;
         private readonly double _voltage;
 
-        private Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
         {
             _type = type;
             _numberOfCoconuts = numberOfCoconuts;

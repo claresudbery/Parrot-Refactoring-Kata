@@ -20,6 +20,6 @@ public class AfricanParrot : IParrot
 
     public string GetCry()
     {
-        return _parrot.GetCry();
+        return "Sqaark!";
     }
 }

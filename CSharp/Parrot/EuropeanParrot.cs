@@ -4,7 +4,7 @@ public class EuropeanParrot : IParrot
 {
     private readonly Parrot _parrot;
 
-    public EuropeanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+    public EuropeanParrot(ParrotTypeEnum type)
     {
         _parrot = new Parrot(type);
     }

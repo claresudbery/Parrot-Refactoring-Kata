@@ -1,0 +1,164 @@
+Below are the steps I took to reach the state the code is currently in.
+
+They may not exactly match the commit history, as in some cases I thought of optimisations after I'd already committed.
+
+# Demo on MacBook (in Rider) - using inheritance
+
+- General useful shortcuts:
+    - Cmd + Shift + R brings up refactoring menu
+        - below I'll just use the shorthand [R] to mean `Cmd + Shift + R`
+    - Option/Alt + Enter to bring up lightbulb menu ("intention actions")
+        - below I'll just use the shorthand [AE]
+- Replace constructor with factory method
+    - Place cursor in name of constructor
+    - [AE] => To factory method
+- Remove redundant cast expressions in `ParrotTest.cs` - all at once
+    - put cursor in one of the greyed out enum type casts
+    - [AE] => right arrow => Remove redundant cast expressions in file
+- Change access modifier of constructor
+    - Place cursor in access modifier (ie "public")
+    - [AE] => To protected
+        - (protected means the code can only be accessed by code in the same class or a derived class - so, like private but extended to the inheritance hierarchy)
+        - so it can be accessed by descendants
+        - at this point you'll get a green squiggly - because it's not being accessed by any descendants yet, so the IDE doesn't think it needs to be protected
+- Create `EuropeanParrot` class
+    - Add a switch statement to `CreateInstance` where you switch on `type`
+    - add a case for `ParrotTypeEnum.EUROPEAN`
+    - type `return new EuropeanParrot();` in the case
+    - place cursor in name of non-existent class (highlighted in red)
+    - [AE] => Create type
+    - [AE] => Implement missing members
+    - Back up to `CreateInstance`: red squiggly because no params passed to constructor
+        - start typing `type` inside brackets and it will give you option to select and auto-complete
+        - keep adding commas after each one and it will keep giving you options to select and auto-complete
+    - one more red squiggly:
+        - place cursor in call to constructor
+        - [AE] => make constructor public
+- Override method
+    - type the word override and then a space
+    - you will be given suggestions - you'll see `GetSpeed` is not available yet
+- Change Signature of GetSpeed
+    - Place cursor in function name
+    - [AE] => To virtual
+        - so we can override it in descendants
+- Override method
+    - type the word override and then a space
+    - you will be given suggestions
+    - edit the return statement to return the relevant code from the European case in the parent
+        - you'll get a red squiggly saying cannot access private method
+- Change access modifier of GetBaseSpeed
+    - Place cursor in access modifier (ie "private")
+    - [AE] => To protected
+        - So we can call it in descendants
+- Get rid of unnecessary case in parent version of `GetSpeed`
+- Move class to its own file
+    - Place cursor in name of class
+    - [AE] => Move to EuropeanParrot.cs
+- Get rid of unnecessary `type` param in constructor
+    - Replace first arg passed to base constructor with hard-coded `ParrotTypeEnum` value
+    - Put cursor in `type` param in constructor
+    - [R] => Safe Delete
+- Repeat relevant steps to create classes for other parrot types
+    - for `AfricanParrot` and `NorwegianBlueParrot`
+    - Override `GetSpeed` for them both
+    - For `AfricanParrot`:
+        - You'll get red squigglies for `GetLoadFactor` and `_numberOfCoconuts`
+        - For each one, [AE] => Make protected
+    - For `NorwegianBlueParrot`:
+        - You'll get red squigglies for `_isNailed` and `_voltage`
+        - For each one, [AE] => Make protected
+        - You'll still have a red squiggly on `_voltage`
+            - This is because the overloaded version of `GetBaseSpeed` in parent needs to be protected
+            - Go to parent method, [AE] => To protected
+- Get rid of switch statement in `GetSpeed`
+    - return 0 instead
+- Add default case to switch statement in `CreateInstance`
+    - `default: throw new ArgumentException($"Invalid type: {type}");`
+    - Remove final return statement
+        - [AE] => Remove unreachable code
+- Make `Parrot` class abstract
+    - Just have to type `abstract` between `public` and `class`
+- Make `GetSpeed` abstract
+    - Place cursor in `virtual` or function name
+    - [AE] => To abstract
+- Introduce relevant fields in all derived classes
+    - Look at what they need in their version of `GetSpeed`
+    - Rename parent version with `_parent` suffix
+        - place cursor in var name
+        - [R] => Rename
+        - Do NOT accept suggested changes for arg names (just uncheck the parent checkbox)
+    - Place cursor in relevant param in derived constructor
+    - [AE] => Introduce read-only field
+    - Then change the version referenced in `GetSpeed` to be the new field
+    - For some (eg `isNailed`), they will become redundant in parent class
+        - Remove it
+        - you can tell cos it's greyed out
+        - put cursor in var declaration
+        - [R] => Safe Delete
+    - For some (eg `voltage`), they can be made private in parent class
+        - [AE] => Make private
+- Remove constructor params not needed in parent class
+    - you can tell cos they're greyed out
+    - put cursor in param declaration
+    - [R] => Safe Delete
+- Remove constructor params not needed in sub-classes
+    - you can tell cos they're greyed out
+    - put cursor in param declaration
+    - [R] => Safe Delete
+- Move `GetLoadFactor` from parent class to `AfricanParrot`
+    - put cursor in name of method
+    - [R] => Push members down
+    - select `AfricanParrot` only
+- Make `GetLoadFactor` private in `AfricanParrot`
+    - put cursor in `protected`
+    - [AE] => make method private
+- Move overloaded `GetBaseSpeed` (with param) from parent class to `NorwegianBlueParrot`
+    - put cursor in name of method
+    - [R] => Push members down
+    - select `NorwegianBlueParrot` only
+- Make `GetBaseSpeed` private in `NorwegianBlueParrot`
+    - put cursor in `protected`
+    - [AE] => make method private
+- Get `GetCry()` functionality working
+    - !! Note that when I originally wrote this code / these instructions, I hadn't yet merged in the `GetCry()` functionality
+    - When I did, I had to re-introduce the `_type` and `_voltage` member vars to the parent class
+- Make `GetCry` virtual - change its signature
+    - Place cursor in function name
+    - [AE] => To virtual
+        - because we're going to override it in descendants
+- Override `GetCry` method in each sub-class
+    - type the word override and then a space
+    - You will be given suggestions
+    - Replace default return value with value specific to this sub-class
+        - copy from switch statement in parent
+        - For `NorwegianBlueParrot` you'll need to replace `_voltage_parent` with `_voltage`
+    - Remove relevant case from switch statement in parent class version of `GetCry`
+- Get rid of switch statement in `GetCry`
+    - return empty string instead
+- Make `GetCry` abstract
+    - Place cursor in `virtual` or function name
+    - [AE] => To abstract
+- Remove unneeded `_type` and `_voltage_parent` member vars in `Parrot` parent class
+    - you can tell cos they're greyed out
+    - put cursor in var declarations
+    - [R] => Safe Delete
+- Remove constructor params not needed in parent class
+    - you can tell cos they're greyed out
+    - put cursor in param declaration
+    - [R] => Safe Delete
+- Remove unneeded calls to base constructor from sub-classes
+    - put cursor in call to `base()`
+    - [AE] => Remove redundant base()
+- Remove redundant constructor in parent class
+    - put cursor in constructor name
+    - [AE] => Remove redundant constructor
+- Remove constructor params not needed in sub-classes
+    - you can tell cos they're greyed out
+    - put cursor in param declaration
+    - [R] => Safe Delete
+- Remove redundant constructor in `EuropeanParrot` class
+    - put cursor in constructor name
+    - [AE] => Remove redundant constructor
+- Remove unused using directives
+    - Place cursor in greyed out using directives at top of any file
+    - [AE] => right arrow => Remove unused using directives in solution

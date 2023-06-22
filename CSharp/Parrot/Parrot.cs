@@ -46,11 +46,6 @@ namespace Parrot
             }
         }
 
-        public static double GetBaseSpeed(double voltage)
-        {
-            return Math.Min(24.0, voltage * GetBaseSpeed());
-        }
-
         public static double GetBaseSpeed()
         {
             return 12.0;

@@ -1,3 +1,5 @@
+using System;
+
 namespace Parrot;
 
 public class NorwegianBlueParrot : IParrot
@@ -13,11 +15,16 @@ public class NorwegianBlueParrot : IParrot
 
     public double GetSpeed()
     {
-        return _isNailed ? 0 : Parrot.GetBaseSpeed(_voltage);
+        return _isNailed ? 0 : GetBaseSpeed(_voltage);
     }
 
     public string GetCry()
     {
         return _voltage > 0 ? "Bzzzzzz" : "...";
+    }
+
+    private static double GetBaseSpeed(double voltage)
+    {
+        return Math.Min(24.0, voltage * Parrot.GetBaseSpeed());
     }
 }

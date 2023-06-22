@@ -41,14 +41,12 @@ namespace Parrot
         {
             switch (_type)
             {
-                case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    return _isNailed ? 0 : GetBaseSpeed(_voltage);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private double GetBaseSpeed(double voltage)
+        public double GetBaseSpeed(double voltage)
         {
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }

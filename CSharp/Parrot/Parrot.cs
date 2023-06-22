@@ -5,11 +5,8 @@ namespace Parrot
 {
     public class Parrot
     {
-        private readonly ParrotTypeEnum _type;
-
-        private Parrot(ParrotTypeEnum type)
+        private Parrot()
         {
-            _type = type;
         }
 
         public static IParrot CreateInstance(

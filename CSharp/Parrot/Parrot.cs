@@ -53,7 +53,7 @@ namespace Parrot
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }
 
-        private double GetLoadFactor()
+        public static double GetLoadFactor()
         {
             return 9.0;
         }

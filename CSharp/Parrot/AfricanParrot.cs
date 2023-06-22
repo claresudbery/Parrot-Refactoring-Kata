@@ -8,7 +8,7 @@ public class AfricanParrot : IParrot
     private readonly Parrot _parrot;
     private readonly int _numberOfCoconuts;
 
-    public AfricanParrot(ParrotTypeEnum type, int numberOfCoconuts)
+    public AfricanParrot(int numberOfCoconuts)
     {
         _numberOfCoconuts = numberOfCoconuts;
         _parrot = new Parrot();

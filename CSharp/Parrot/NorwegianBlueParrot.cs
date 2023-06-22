@@ -8,7 +8,7 @@ public class NorwegianBlueParrot : IParrot
     private readonly bool _isNailed;
     private readonly double _voltage;
 
-    public NorwegianBlueParrot(ParrotTypeEnum type, double voltage, bool isNailed)
+    public NorwegianBlueParrot(double voltage, bool isNailed)
     {
         _voltage = voltage;
         _isNailed = isNailed;

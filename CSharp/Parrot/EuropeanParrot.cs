@@ -4,7 +4,7 @@ public class EuropeanParrot : IParrot
 {
     private readonly Parrot _parrot;
 
-    public EuropeanParrot(ParrotTypeEnum type)
+    public EuropeanParrot()
     {
         _parrot = new Parrot();
     }

@@ -14,11 +14,11 @@ namespace Parrot
             switch (type)
             {
                 case ParrotTypeEnum.EUROPEAN: 
-                    return new EuropeanParrot(type);
+                    return new EuropeanParrot();
                 case ParrotTypeEnum.AFRICAN:
-                    return new AfricanParrot(type, numberOfCoconuts);
+                    return new AfricanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    return new NorwegianBlueParrot(type, voltage, isNailed);
+                    return new NorwegianBlueParrot(voltage, isNailed);
                 default: 
                     throw new ArgumentException($"Invalid type: {type}");
             }

@@ -1,3 +1,6 @@
+Below are the steps I took to reach the state the code is currently in.
+
+They may not exactly match the commit history, as in some cases I thought of optimisations after I'd already committed.
 
 # Demo on MacBook (in Rider) - using an interface and non-static Parrot class
 

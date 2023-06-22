@@ -2,12 +2,12 @@
 
 namespace Parrot
 {
-    public class NorwegianParrot : Parrot
+    public class NorwegianBlueParrot : Parrot
     {
         private readonly double _voltage;
         private readonly bool _isNailed;
 
-        public NorwegianParrot(double voltage, bool isNailed)
+        public NorwegianBlueParrot(double voltage, bool isNailed)
         {
             _voltage = voltage;
             _isNailed = isNailed;

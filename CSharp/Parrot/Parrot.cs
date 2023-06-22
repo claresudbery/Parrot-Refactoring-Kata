@@ -28,6 +28,8 @@ namespace Parrot
             {
                 case ParrotTypeEnum.EUROPEAN: 
                     return new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+                case ParrotTypeEnum.AFRICAN:
+                    return new AfricanParrot(type, numberOfCoconuts, voltage, isNailed);
             }
 
             return new Parrot(type, numberOfCoconuts, voltage, isNailed);

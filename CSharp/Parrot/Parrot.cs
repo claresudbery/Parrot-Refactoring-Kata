@@ -18,8 +18,18 @@ namespace Parrot
             _isNailed = isNailed;
         }
 
-        public static IParrot CreateInstance(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+        public static IParrot CreateInstance(
+            ParrotTypeEnum type, 
+            int numberOfCoconuts, 
+            double voltage, 
+            bool isNailed)
         {
+            switch (type)
+            {
+                case ParrotTypeEnum.EUROPEAN: 
+                    return new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+            }
+
             return new Parrot(type, numberOfCoconuts, voltage, isNailed);
         }
 

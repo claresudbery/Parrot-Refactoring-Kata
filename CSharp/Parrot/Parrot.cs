@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Parrot
 {
-    public class Parrot
+    public class Parrot : IParrot
     {
         private readonly bool _isNailed;
         private readonly int _numberOfCoconuts;

@@ -11,7 +11,7 @@ public class EuropeanParrot : IParrot
 
     public double GetSpeed()
     {
-        return _parrot.GetSpeed();
+        return _parrot.GetBaseSpeed();
     }
 
     public string GetCry()

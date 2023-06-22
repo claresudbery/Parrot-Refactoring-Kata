@@ -58,7 +58,7 @@ namespace Parrot
             return 9.0;
         }
 
-        private double GetBaseSpeed()
+        public double GetBaseSpeed()
         {
             return 12.0;
         }

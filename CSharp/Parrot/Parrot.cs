@@ -39,8 +39,6 @@ namespace Parrot
         {
             switch (_type)
             {
-                case ParrotTypeEnum.AFRICAN:
-                    return Math.Max(0, GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
                     return _isNailed ? 0 : GetBaseSpeed(_voltage);
                 default:
@@ -53,7 +51,7 @@ namespace Parrot
             return Math.Min(24.0, voltage * GetBaseSpeed());
         }
 
-        private double GetLoadFactor()
+        public double GetLoadFactor()
         {
             return 9.0;
         }

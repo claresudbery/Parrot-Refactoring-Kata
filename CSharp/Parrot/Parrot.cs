@@ -31,29 +31,9 @@ namespace Parrot
             }
         }
 
-        public double GetSpeed()
-        {
-            switch (_type)
-            {
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
         public static double GetBaseSpeed()
         {
             return 12.0;
-        }
-
-        public string GetCry()
-        {
-            string value;
-            switch (_type)
-            {
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            return value;
         }
     }
 }

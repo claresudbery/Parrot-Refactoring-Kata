@@ -13,11 +13,16 @@ public class AfricanParrot : IParrot
 
     public double GetSpeed()
     {
-        return Math.Max(0, Parrot.GetBaseSpeed() - Parrot.GetLoadFactor() * _numberOfCoconuts);
+        return Math.Max(0, Parrot.GetBaseSpeed() - GetLoadFactor() * _numberOfCoconuts);
     }
 
     public string GetCry()
     {
         return "Sqaark!";
+    }
+
+    public static double GetLoadFactor()
+    {
+        return 9.0;
     }
 }

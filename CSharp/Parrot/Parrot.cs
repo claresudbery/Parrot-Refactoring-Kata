@@ -41,8 +41,6 @@ namespace Parrot
         {
             switch (_type)
             {
-                case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    return _isNailed ? 0 : GetBaseSpeed(_voltage);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

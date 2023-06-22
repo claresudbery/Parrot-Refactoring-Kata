@@ -56,9 +56,6 @@ namespace Parrot
             string value;
             switch (_type)
             {
-                case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    value = _voltage > 0 ? "Bzzzzzz" : "...";
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

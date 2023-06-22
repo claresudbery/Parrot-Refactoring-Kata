@@ -27,6 +27,6 @@ public class NorwegianBlueParrot : IParrot
 
     public string GetCry()
     {
-        return _parrot.GetCry();
+        return _voltage > 0 ? "Bzzzzzz" : "...";
     }
 }

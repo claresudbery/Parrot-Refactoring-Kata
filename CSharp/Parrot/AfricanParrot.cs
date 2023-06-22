@@ -6,7 +6,7 @@ public class AfricanParrot : IParrot
 {
     private readonly int _numberOfCoconuts;
 
-    public AfricanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed)
+    public AfricanParrot(int numberOfCoconuts)
     {
         _numberOfCoconuts = numberOfCoconuts;
     }

@@ -31,7 +31,7 @@ namespace Parrot
                 case ParrotTypeEnum.AFRICAN:
                     return new AfricanParrot(numberOfCoconuts);
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    return new NorwegianBlueParrot(type, numberOfCoconuts, voltage, isNailed);
+                    return new NorwegianBlueParrot(voltage, isNailed);
             }
 
             return new Parrot(type, numberOfCoconuts, voltage, isNailed);

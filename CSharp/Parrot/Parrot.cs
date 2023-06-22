@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Parrot
 {
-    public class Parrot : IParrot
+    public class Parrot
     {
         private readonly ParrotTypeEnum _type;
 

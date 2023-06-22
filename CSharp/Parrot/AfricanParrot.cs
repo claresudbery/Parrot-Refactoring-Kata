@@ -4,6 +4,7 @@ namespace Parrot;
 
 public class AfricanParrot : IParrot
 {
+    private const double LoadFactor = 9.0;
     private readonly Parrot _parrot;
     private readonly int _numberOfCoconuts;
 
@@ -15,7 +16,7 @@ public class AfricanParrot : IParrot
 
     public double GetSpeed()
     {
-        return Math.Max(0, _parrot.GetBaseSpeed() - _parrot.GetLoadFactor() * _numberOfCoconuts);
+        return Math.Max(0, _parrot.GetBaseSpeed() - LoadFactor * _numberOfCoconuts);
     }
 
     public string GetCry()

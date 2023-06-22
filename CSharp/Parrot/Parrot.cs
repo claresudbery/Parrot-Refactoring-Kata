@@ -5,10 +5,6 @@ namespace Parrot
 {
     public class Parrot
     {
-        public Parrot()
-        {
-        }
-
         public static IParrot CreateInstance(
             ParrotTypeEnum type, 
             int numberOfCoconuts, 

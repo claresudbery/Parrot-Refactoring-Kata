@@ -16,7 +16,6 @@ namespace Parrot
             _numberOfCoconuts = numberOfCoconuts;
             _voltage = voltage;
             _isNailed = isNailed;
-            // Hello I am here again
         }
 
         public double GetSpeed()

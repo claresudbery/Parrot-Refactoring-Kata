@@ -24,13 +24,13 @@ namespace Parrot
             switch (type)
             {
                 case ParrotTypeEnum.EUROPEAN:
-                    parrot = new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+                    parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 case ParrotTypeEnum.AFRICAN:
-                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 case ParrotTypeEnum.NORWEGIAN_BLUE:
-                    parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
+                    parrot = new NorwegianBlueParrot(numberOfCoconuts, voltage, isNailed);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
@@ -87,14 +87,6 @@ namespace Parrot
                     throw new ArgumentOutOfRangeException();
             }
             return value;
-        }
-    }
-
-    public class EuropeanParrot : Parrot
-    {
-        public EuropeanParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, bool isNailed) 
-            : base(ParrotTypeEnum.EUROPEAN, numberOfCoconuts, voltage, isNailed)
-        {
         }
     }
 }
